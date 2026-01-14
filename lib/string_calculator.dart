@@ -9,7 +9,7 @@ class StringCalculator {
     // Handle single number
     if (parts.length == 1) return int.parse(parts[0]);
 
-    // Handle two comma separated numbers
-    return int.parse(parts[0]) + int.parse(parts[1]);
+    // Sum multiple numbers
+    return parts.map(int.parse).reduce((a, b) => a + b);
   }
 }

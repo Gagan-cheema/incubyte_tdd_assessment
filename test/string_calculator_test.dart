@@ -19,4 +19,9 @@ void main() {
     final calc = StringCalculator();
     expect(calc.add("1,5"), equals(6));
   });
+
+  test('multiple numbers are added', () {
+    final calc = StringCalculator();
+    expect(calc.add("1,2,3,4"), equals(10));
+  });
 }
