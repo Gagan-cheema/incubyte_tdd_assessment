@@ -13,4 +13,10 @@ void main() {
     final calc = StringCalculator();
     expect(calc.add("5"), equals(5));
   });
+
+  // Two comma separated numbers
+  test('two comma separated numbers are added', () {
+    final calc = StringCalculator();
+    expect(calc.add("1,5"), equals(6));
+  });
 }
