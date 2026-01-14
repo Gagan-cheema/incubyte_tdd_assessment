@@ -24,4 +24,9 @@ void main() {
     final calc = StringCalculator();
     expect(calc.add("1,2,3,4"), equals(10));
   });
+
+  test('new lines between numbers are allowed', () {
+    final calc = StringCalculator();
+    expect(calc.add("1\n2,3"), equals(6));
+  });
 }
