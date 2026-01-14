@@ -34,4 +34,22 @@ void main() {
     final calc = StringCalculator();
     expect(calc.add("//;\n1;2"), equals(3));
   });
+
+  test('single negative number throws exception', () {
+    final calc = StringCalculator();
+
+    expect(
+      () => calc.add("1,-2,3"),
+      throwsA(predicate((e) => e.toString().contains("negative numbers not allowed -2"))),
+    );
+  });
+
+  test('multiple negative numbers are listed in exception message', () {
+    final calc = StringCalculator();
+
+    expect(
+      () => calc.add("1,-2,-5,3"),
+      throwsA(predicate((e) => e.toString().contains("negative numbers not allowed -2,-5"))),
+    );
+  });
 }

@@ -31,6 +31,12 @@ class StringCalculator {
     // Convert all parts to integers
     final nums = parts.map(int.parse).toList();
 
+    // Find negative numbers
+    final negatives = nums.where((n) => n < 0).toList();
+    if (negatives.isNotEmpty) {
+      throw Exception("negative numbers not allowed ${negatives.join(',')}");
+    }
+
     // Return the sum of all numbers
     return nums.reduce((a, b) => a + b);
   }
